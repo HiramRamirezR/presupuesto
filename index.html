@@ -13,8 +13,8 @@
       <div class="col-12">
         <h1>Presupuesto Torres</h1>
         <h2>Presupuesto del 2° trimestre 2023 (abril, mayo, junio)</h2>
-        <h3 id="total"></h3>
-        <table class="table table-striped-columns table-hover">
+        <h3>Asignado al barrio: $<span id="asignado"></span></h3>
+        <table class="table table-striped-columns table-hover mt-5">
           <thead>
             <tr>
               <th scope="col">Organización</th>
@@ -54,10 +54,16 @@
               <th scope="row">Obispado</th>
               <td id="obispado"></td>
             </tr>
+            <tr>
+              <th scope="row">Total</th>
+              <td id="total"></td>
+            </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
+
+  <script src="/app.js"></script>
 </body>
 </html>
