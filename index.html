@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="shortcut icon" href="/favicon.jpg" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <title>Presupuesto Torres</title>
@@ -16,29 +17,34 @@
         <h1>Presupuesto del Barrio Torres</h1>
         <h2>2° trimestre del 2023 (abril, mayo, junio)</h2>
         <h3>Total asignado: $<span id="asignado"></span></h3>
-        <table class="table table-striped table-hover mt-5">
+        <table class="table table-hover mt-5">
           <thead>
             <tr>
               <th scope="col">Organización</th>
               <th scope="col">Presupuesto</th>
+              <th scope="col">Gasto</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">Sociedad de Socorro</th>
               <td id="sociedad-de-socorro"></td>
+              <td><a class="btn btn-danger" role="button"><i class="fa-solid fa-circle-minus"></i></a></td>
             </tr>
             <tr>
               <th scope="row">Quórum de Élderes</th>
               <td id="quorum-de-elderes"></td>
+              <td><a class="btn btn-danger" role="button"><i class="fa-regular fa-square-minus"></i></a></td>
             </tr>
             <tr>
               <th scope="row">Primaria</th>
               <td id="primaria"></td>
+              <td><a class="btn btn-danger" role="button"><i class="fa-solid fa-money-bill-1-wave"></i></a></td>
             </tr>
             <tr>
               <th scope="row">Mujeres jóvenes</th>
               <td id="mujeres-jovenes"></td>
+              <td><a class="btn btn-danger" role="button"><i class="fa-solid fa-money-bill-transfer"></i></a></td>
             </tr>
             <tr>
               <th scope="row">Hombres jóvenes</th>
@@ -57,8 +63,8 @@
               <td id="obispado"></td>
             </tr>
             <tr>
-              <th scope="row" class="table-secondary">Total</th>
-              <td id="total" class="table-secondary"></td>
+              <th scope="row" class="table-dark">Total</th>
+              <td id="total" class="table-dark"></td>
             </tr>
           </tbody>
         </table>
