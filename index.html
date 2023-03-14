@@ -14,9 +14,10 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1>Presupuesto del Barrio Torres</h1>
+        <h1 id="inicio">Presupuesto del Barrio Torres</h1>
         <h2>2° trimestre del 2023 (abril, mayo, junio)</h2>
         <h3>Total asignado: $<span id="asignado"></span></h3>
+        <a href="#resumen" class="btn btn-dark" role="button"><i class="fa-solid fa-file-lines"></i></a>
         <table class="table table-hover mt-5">
           <thead>
             <tr>
@@ -87,9 +88,19 @@
             <tr>
               <th scope="row" class="table-dark">Restante</th>
               <td id="total" class="table-dark"></td>
+              <td id="porcentaje" class="table-dark">100%</td>
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div id="resumen">
+          <h3>Resumen</h3>
+          <a href="#inicio" class="btn btn-dark" role="button"><i class="fa-solid fa-table-columns"></i></i></a>
+          <ul id="resumen"></ul>
+        </div>
       </div>
     </div>
   </div>

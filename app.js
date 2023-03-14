@@ -11,6 +11,8 @@ let ja = document.getElementById('ja')
 let escuelaDominical = document.getElementById('escuela-dominical')
 let obispado = document.getElementById('obispado')
 let total = document.getElementById('total')
+let porcentaje = document.getElementById('porcentaje')
+let resumen = document.getElementById('resumen')
 
 asignado.innerHTML = presupuesto
 
@@ -48,8 +50,19 @@ let gastos = document.querySelectorAll('.btn-danger')
 
 gastos.forEach((gasto) => {
     gasto.addEventListener('click', (e) => {
-      let cantidadGasto = prompt('¿Cuánto se gastó?')
+      let cantidadGasto = Number(prompt('¿Cuánto se gastó?'))
+
+      if (cantidadGasto * 0 != 0) {
+        alert('Por favor ingrese un número')
+        return
+      }
+
       let targetGasto = e.target.parentElement.parentElement.children[1].id
+
+      let descripcionGasto = prompt('¿Qué actividad fue o en qué se gastó?')
+      let elemento = resumen.appendChild(document.createElement('li'))
+      elemento.innerHTML = `${targetGasto.at(0).toUpperCase()}${targetGasto.slice(1)}, ${descripcionGasto} - $${cantidadGasto}`
+
       // console.log(targetGasto)
       if (targetGasto == 'sociedad-de-socorro') {
         sociedadDeSocorro.innerHTML -= cantidadGasto
@@ -69,6 +82,7 @@ gastos.forEach((gasto) => {
         obispado.innerHTML -= cantidadGasto
       }
       total.innerHTML -= cantidadGasto
+      porcentaje.innerHTML = Math.round((total.innerHTML / presupuesto) * 100) + '%'
     })
 })
 
@@ -97,5 +111,6 @@ ingresos.forEach((ingreso) => {
       obispado.innerHTML = parseInt(obispado.innerHTML) + parseInt(cantidadIngreso)
     }
     total.innerHTML = parseInt(total.innerHTML) + parseInt(cantidadIngreso)
+    porcentaje.innerHTML = Math.round((total.innerHTML / presupuesto) * 100) + '%'
   })
 })
