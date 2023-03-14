@@ -6,4 +6,8 @@ body {
 i {
   pointer-events: none;
 }
+
+h1, h2, h3 {
+  text-align: center;
+}
 /*# sourceMappingURL=style.css.map */

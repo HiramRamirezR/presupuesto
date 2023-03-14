@@ -44,30 +44,58 @@ obispado.innerHTML = obispadoTotal
 let totalCalculo = (sociedadDeSocorroPorcentaje * presupuesto) + (quorumDeElderesPorcentaje * presupuesto) + (primariaPorcentaje * presupuesto) + (mujeresJovenesPorcentaje * presupuesto) + (hombresJovenesPorcentaje * presupuesto) + (jaPorcentaje * presupuesto) + (escuelaDominicalPorcentaje * presupuesto) + (obispadoPorcentaje * presupuesto)
 total.innerHTML = totalCalculo
 
-let gastos = document.querySelectorAll('a')
+let gastos = document.querySelectorAll('.btn-danger')
 
 gastos.forEach((gasto) => {
     gasto.addEventListener('click', (e) => {
-      let cantidad = prompt('¿Cuánto se gastó?')
-      let target = e.target.parentElement.parentElement.children[1].id
-      // console.log(target)
-      if (target == 'sociedad-de-socorro') {
-        sociedadDeSocorro.innerHTML -= cantidad
-      } else if (target == 'quorum-de-elderes') {
-        quorumDeElderes.innerHTML -= cantidad
-      } else if (target == 'primaria') {
-        primaria.innerHTML -= cantidad
-      } else if (target == 'mujeres-jovenes') {
-        mujeresJovenes.innerHTML -= cantidad
-      } else if (target == 'hombres-jovenes') {
-        hombresJovenes.innerHTML -= cantidad
-      } else if (target == 'ja') {
-        ja.innerHTML -= cantidad
-      } else if (target == 'escuela-dominical') {
-        escuelaDominical.innerHTML -= cantidad
-      } else if (target == 'obispado') {
-        obispado.innerHTML -= cantidad
+      let cantidadGasto = prompt('¿Cuánto se gastó?')
+      let targetGasto = e.target.parentElement.parentElement.children[1].id
+      // console.log(targetGasto)
+      if (targetGasto == 'sociedad-de-socorro') {
+        sociedadDeSocorro.innerHTML -= cantidadGasto
+      } else if (targetGasto == 'quorum-de-elderes') {
+        quorumDeElderes.innerHTML -= cantidadGasto
+      } else if (targetGasto == 'primaria') {
+        primaria.innerHTML -= cantidadGasto
+      } else if (targetGasto == 'mujeres-jovenes') {
+        mujeresJovenes.innerHTML -= cantidadGasto
+      } else if (targetGasto == 'hombres-jovenes') {
+        hombresJovenes.innerHTML -= cantidadGasto
+      } else if (targetGasto == 'ja') {
+        ja.innerHTML -= cantidadGasto
+      } else if (targetGasto == 'escuela-dominical') {
+        escuelaDominical.innerHTML -= cantidadGasto
+      } else if (targetGasto == 'obispado') {
+        obispado.innerHTML -= cantidadGasto
       }
-      total.innerHTML -= cantidad
+      total.innerHTML -= cantidadGasto
     })
+})
+
+let ingresos = document.querySelectorAll('.btn-success')
+
+ingresos.forEach((ingreso) => {
+  ingreso.addEventListener('click', (e) => {
+    let cantidadIngreso = prompt('¿Cuánto se ingresó?')
+    let targetIngreso = e.target.parentElement.parentElement.children[1].id
+    // console.log(targetIngreso)
+    if (targetIngreso == 'sociedad-de-socorro') {
+      sociedadDeSocorro.innerHTML = parseInt(sociedadDeSocorro.innerHTML) + parseInt(cantidadIngreso)
+    } else if (targetIngreso == 'quorum-de-elderes') {
+      quorumDeElderes.innerHTML = parseInt(quorumDeElderes.innerHTML) + parseInt(cantidadIngreso)
+    } else if (targetIngreso == 'primaria') {
+      primaria.innerHTML = parseInt(primaria.innerHTML) + parseInt(cantidadIngreso)
+    } else if (targetIngreso == 'mujeres-jovenes') {
+      mujeresJovenes.innerHTML = parseInt(mujeresJovenes.innerHTML) + parseInt(cantidadIngreso)
+    } else if (targetIngreso == 'hombres-jovenes') {
+      hombresJovenes.innerHTML = parseInt(hombresJovenes.innerHTML) + parseInt(cantidadIngreso)
+    } else if (targetIngreso == 'ja') {
+      ja.innerHTML = parseInt(ja.innerHTML) + parseInt(cantidadIngreso)
+    } else if (targetIngreso == 'escuela-dominical') {
+      escuelaDominical.innerHTML = parseInt(escuelaDominical.innerHTML) + parseInt(cantidadIngreso)
+    } else if (targetIngreso == 'obispado') {
+      obispado.innerHTML = parseInt(obispado.innerHTML) + parseInt(cantidadIngreso)
+    }
+    total.innerHTML = parseInt(total.innerHTML) + parseInt(cantidadIngreso)
+  })
 })
