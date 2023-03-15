@@ -55,13 +55,30 @@ gastos.forEach((gasto) => {
       if (cantidadGasto * 0 != 0) {
         alert('Por favor ingrese un número')
         return
+      } else if (cantidadGasto == 0) {
+        return
       }
 
       let targetGasto = e.target.parentElement.parentElement.children[1].id
 
       let descripcionGasto = prompt('¿Qué actividad fue o en qué se gastó?')
+
+      if (descripcionGasto == null) {
+        return
+      }
+
       let elemento = resumen.appendChild(document.createElement('li'))
-      elemento.innerHTML = `${targetGasto.at(0).toUpperCase()}${targetGasto.slice(1)}, ${descripcionGasto} - $${cantidadGasto}`
+
+      let fecha = new Date()
+      let dia = fecha.toString().split(' ')[2]
+      let mes = fecha.toString().split(' ')[1]
+      let year = fecha.toString().split(' ')[3]
+      let horas = fecha.toString().split(' ')[4].split(':')[0]
+      let minutos = fecha.toString().split(' ')[4].split(':')[1]
+      let stamp = `${dia} ${mes} del ${year} a las ${horas}:${minutos}`
+
+      elemento.innerHTML = `${stamp} / ${targetGasto.at(0).toUpperCase()}${targetGasto.slice(1)} gastó $${cantidadGasto} en ${descripcionGasto}`
+      elemento.classList.add('gasto')
 
       // console.log(targetGasto)
       if (targetGasto == 'sociedad-de-socorro') {
@@ -90,8 +107,35 @@ let ingresos = document.querySelectorAll('.btn-success')
 
 ingresos.forEach((ingreso) => {
   ingreso.addEventListener('click', (e) => {
-    let cantidadIngreso = prompt('¿Cuánto se ingresó?')
+    let cantidadIngreso = Number(prompt('¿Cuánto se ingresó?'))
+
+    if (cantidadIngreso * 0 != 0) {
+      alert('Por favor ingrese un número')
+      return
+    } else if (cantidadIngreso == 0) {
+      return
+    }
+
     let targetIngreso = e.target.parentElement.parentElement.children[1].id
+    let descripcionIngreso = prompt('Ingrese una corrección.')
+
+    if (descripcionIngreso == null) {
+      return
+    }
+
+    let elemento = resumen.appendChild(document.createElement('li'))
+
+    let fecha = new Date()
+    let dia = fecha.toString().split(' ')[2]
+    let mes = fecha.toString().split(' ')[1]
+    let year = fecha.toString().split(' ')[3]
+    let horas = fecha.toString().split(' ')[4].split(':')[0]
+    let minutos = fecha.toString().split(' ')[4].split(':')[1]
+    let stamp = `${dia} ${mes} del ${year} a las ${horas}:${minutos}`
+
+    elemento.innerHTML = `${stamp} / ${targetIngreso.at(0).toUpperCase()}${targetIngreso.slice(1)} devolvió $${cantidadIngreso} - (${descripcionIngreso})`
+    elemento.classList.add('ingreso')
+
     // console.log(targetIngreso)
     if (targetIngreso == 'sociedad-de-socorro') {
       sociedadDeSocorro.innerHTML = parseInt(sociedadDeSocorro.innerHTML) + parseInt(cantidadIngreso)
