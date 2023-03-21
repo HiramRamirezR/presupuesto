@@ -1,4 +1,5 @@
 let presupuesto = 8885
+const data = {}
 
 let asignado = document.getElementById('asignado')
 
@@ -100,6 +101,15 @@ gastos.forEach((gasto) => {
       }
       total.innerHTML -= cantidadGasto
       porcentaje.innerHTML = Math.round((total.innerHTML / presupuesto) * 100) + '%'
+
+      data.sociedad = Number(sociedadDeSocorro.innerHTML)
+      data.quorum = Number(quorumDeElderes.innerHTML)
+      data.primaria = Number(primaria.innerHTML)
+      data.mujeres = Number(mujeresJovenes.innerHTML)
+      data.hombres = Number(hombresJovenes.innerHTML)
+      data.ja = Number(ja.innerHTML)
+      data.escuela = Number(escuelaDominical.innerHTML)
+      data.obispado = Number(obispado.innerHTML)
     })
 })
 
@@ -156,5 +166,14 @@ ingresos.forEach((ingreso) => {
     }
     total.innerHTML = parseInt(total.innerHTML) + parseInt(cantidadIngreso)
     porcentaje.innerHTML = Math.round((total.innerHTML / presupuesto) * 100) + '%'
+
+    data.sociedad = Number(sociedadDeSocorro.innerHTML)
+    data.quorum = Number(quorumDeElderes.innerHTML)
+    data.primaria = Number(primaria.innerHTML)
+    data.mujeres = Number(mujeresJovenes.innerHTML)
+    data.hombres = Number(hombresJovenes.innerHTML)
+    data.ja = Number(ja.innerHTML)
+    data.escuela = Number(escuelaDominical.innerHTML)
+    data.obispado = Number(obispado.innerHTML)
   })
 })

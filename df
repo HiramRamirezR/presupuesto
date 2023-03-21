@@ -1,0 +1,50 @@
+[33mcommit 16a7affe0393980d601d22e9e50723b10d8d0ecf[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: hiramramirez <hiram.j.ramirez@gmail.com>
+Date:   Tue Mar 14 23:55:48 2023 -0600
+
+    Small fixes in the cancel pop up windows, colors in the summary and summary completed with time stamps.
+
+ app.js        | 48 [32m+++++++++++++++++++++++++++++++++[m[31m--[m
+ style.css     |  8 [32m++++++[m
+ style.css.map |  2 [32m+[m[31m-[m
+ style.scss    |  8 [32m++++++[m
+ 4 files changed, 63 insertions(+), 3 deletions(-)
+
+[33mcommit 41a861bf541057d7f329610700ba486e757ae396[m
+Author: hiramramirez <hiram.j.ramirez@gmail.com>
+Date:   Tue Mar 14 03:25:32 2023 -0600
+
+    The summary is working fine. Just need to add de DB with supabase.
+
+ app.js        | 17 [32m++++++++++++++++[m[31m-[m
+ index.html    | 13 [32m++++++++++++[m[31m-[m
+ style.css     |  4 [32m++++[m
+ style.css.map |  2 [32m+[m[31m-[m
+ style.scss    |  4 [32m++++[m
+ 5 files changed, 37 insertions(+), 3 deletions(-)
+
+[33mcommit 36f553904d492af864e8b102a2dff51f7c97a457[m
+Author: hiramramirez <hiram.j.ramirez@gmail.com>
+Date:   Tue Mar 14 01:01:37 2023 -0600
+
+    The app is totally workin, just need to preserv data.
+
+ app.js        | 70 [32m++++++++++++++++++++++++[m[31m-----------[m
+ index.html    | 20 [32m+++++++++[m[31m-[m
+ style.css     |  4 [32m++[m
+ style.css.map |  2 [32m+[m[31m-[m
+ style.scss    |  4 [32m++[m
+ 5 files changed, 77 insertions(+), 23 deletions(-)
+
+[33mcommit faf7d1a57a2791e4afdc44aa3fe139cf95dc9cb3[m
+Author: hiramramirez <hiram.j.ramirez@gmail.com>
+Date:   Tue Mar 14 00:39:33 2023 -0600
+
+    expenses are working fine
+
+ app.js        | 57 [32m+++++++++++++++++++++++++++++[m[31m------[m
+ index.html    | 10 [32m++++[m[31m--[m
+ style.css     |  4 [32m+++[m
+ style.css.map |  2 [32m+[m[31m-[m
+ style.scss    |  4 [32m+++[m
+ 5 files changed, 63 insertions(+), 14 deletions(-)
